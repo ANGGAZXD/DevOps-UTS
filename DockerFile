@@ -1,4 +1,4 @@
 FROM php:cli
 WORKDIR /app
 COPY . /app
-CMD ["php", "your_php_file.php"]
+CMD ["php", "login.php"]
