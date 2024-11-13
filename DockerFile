@@ -1,18 +1,4 @@
-# Gunakan base image resmi PHP dengan Apache
-FROM php:8.0-apache
-
-# Salin source code ke dalam direktori root Apache di dalam container
-COPY . /var/www/html
-
-# Berikan izin yang diperlukan untuk direktori root Apache
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
-
-# Install ekstensi PHP tambahan jika diperlukan
-RUN docker-php-ext-install mysqli
-
-# Expose port 80 untuk akses web server
-EXPOSE 80
-
-# Restart Apache untuk memastikan konfigurasi baru aktif
-CMD ["apache2-foreground"]
+FROM php:cli
+WORKDIR /app
+COPY . /app
+CMD ["php", "your_php_file.php"]
