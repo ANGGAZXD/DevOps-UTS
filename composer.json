@@ -2,4 +2,7 @@
     "require": {
         "dompdf/dompdf": "^1.0"
     }
+    "scripts": {
+        "run-phpunit": "vendor/bin/phpunit"
+    }
 }
